@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string "fist_name", :limit => 25
       t.string "last_name", :limit => 25
       t.string "role", :default => 'user'
-      t.text "decription", :limit => 300
+      t.text "description", :limit => 300
       t.date "date_of_birth" 
       t.date "joining_date"
 
