@@ -1,6 +1,7 @@
 class CreateJournals < ActiveRecord::Migration[7.0]
   def change
-    create_table :journals do |t|
+    create_table :journals, id: false do |t|
+      t.integer "journal_id", primary_key: true #primary key 
       t.integer "user_id", :null => false
       t.string "title", :limit => 25
       t.text "description", :limit => 300
@@ -12,3 +13,5 @@ class CreateJournals < ActiveRecord::Migration[7.0]
     add_index :journals, :user_id
   end
 end
+
+

@@ -1,7 +1,8 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
+
   def change
-    create_table :users do |t|
-      #primary key gets created automaticly
+    create_table :users, id: false do |t|
+      t.integer "user_id", primary_key: true #primary key 
       t.string "fist_name", :limit => 25
       t.string "last_name", :limit => 25
       t.string "role", :default => 'user'
@@ -17,3 +18,4 @@ class CreateUsers < ActiveRecord::Migration[7.0]
   end
 
 end
+
