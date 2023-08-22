@@ -2,7 +2,7 @@ class CreateJournals < ActiveRecord::Migration[7.0]
   def change
     create_table :journals, id: false do |t|
       t.integer "journal_id", primary_key: true #primary key 
-      t.integer "user_id", :null => false
+      t.integer "user_id"
       t.string "title", :limit => 25
       t.text "description", :limit => 300
 

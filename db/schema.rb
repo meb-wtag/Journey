@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_084902) do
   end
 
   create_table "tasks", primary_key: "task_id", id: :serial, force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "title", limit: 25
     t.text "content"
     t.date "deadline"
