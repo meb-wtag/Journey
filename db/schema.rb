@@ -10,38 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_124112) do
+ActiveRecord::Schema[7.0].define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "goals", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "journal_entries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "title", limit: 25
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "fist_name", limit: 25
-    t.string "last_name", limit: 25
-    t.string "role", default: "user"
-    t.text "description"
-    t.date "date_of_birth"
-    t.date "joining_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
