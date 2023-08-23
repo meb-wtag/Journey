@@ -72,3 +72,7 @@ group :test do
 end
 
 gem "dotenv-rails"
+
+gem "jsbundling-rails"
+gem 'bootstrap', '~> 5.3.1'
+gem "cssbundling-rails"
