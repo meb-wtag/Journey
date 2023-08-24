@@ -1,29 +1,29 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">Jounrey</span>
+      <span class="fs-4">Journey</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
       	<div>
-      			<%= link_to('Journals', {:action => 'index'},
+      			<%= link_to('Journals', {:action=>"form", :controller=>"journal"},
       			{class:"nav-link link-active"})%>     
         </div>
       </li>
       <li>
-      		<%= link_to('Index', {:action => 'index'},
+      		<%= link_to('Index', {:action=>"index", :controller=>"home"},
       			{class:"nav-link link-dark"})%>
       </li>
       <li>
-      		<%= link_to('Index', {:action => 'index'},
+      		<%= link_to('Index', {:action=>"index", :controller=>"home"},
       			{class:"nav-link link-dark"})%>
       </li>
       <li>
-      		<%= link_to('Index', {:action => 'index'},
+      		<%= link_to('Index', {:action=>"index", :controller=>"home"},
       			{class:"nav-link link-dark"})%>
       </li>
 	  <li>
-      		<%= link_to('Index', {:action => 'index'},
+      		<%= link_to('Index', {:action=>"index", :controller=>"home"},
       			{class:"nav-link link-dark"})%>
       </li>
     </ul>
