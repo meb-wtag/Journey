@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_22_084902) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_24_081630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "goals", primary_key: "goal_id", id: :serial, force: :cascade do |t|
-    t.integer "entry_id", null: false
+    t.integer "entry_id"
     t.string "title", limit: 25
     t.text "content"
     t.boolean "reached", default: false
@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_084902) do
   end
 
   create_table "journal_entries", primary_key: "entry_id", id: :serial, force: :cascade do |t|
-    t.integer "journal_id", null: false
-    t.integer "user_id", null: false
+    t.integer "journal_id"
+    t.integer "user_id"
     t.string "file_path"
     t.string "title", limit: 25
     t.text "content"
