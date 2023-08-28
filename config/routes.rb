@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-
+  get 'user/root'
 
   resources :home
   resources :journals do
