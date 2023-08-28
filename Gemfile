@@ -74,3 +74,9 @@ end
 gem "dotenv-rails"
 
 gem 'simple_form'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+end
+
+gem "factory_bot", "~> 6.2"
