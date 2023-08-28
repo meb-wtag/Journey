@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_124112) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_24_081630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,18 +19,47 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_124112) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "journal_entries", force: :cascade do |t|
+  create_table "journal_entries", id: false, force: :cascade do |t|
+    t.integer "entry_id", null: false
+    t.integer "journal_id", null: false
+    t.integer "user_id"
+    t.string "title", limit: 25
+    t.text "content"
+    t.string "file_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["journal_id"], name: "index_journal_entries_on_journal_id"
+    t.index ["user_id"], name: "index_journal_entries_on_user_id"
+  end
+
+  create_table "journals", primary_key: "journal_id", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title", limit: 25
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", limit: 25
-    t.text "description"
+    t.text "content"
+    t.date "deadline"
+    t.integer "importance"
+    t.string "status", default: "to do"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
+  create_table "user_tasks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_user_tasks_on_task_id"
+    t.index ["user_id"], name: "index_user_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

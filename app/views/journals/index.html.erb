@@ -19,10 +19,15 @@
           <tr>
             <td><%= journal.title %></td>
             <td><%= journal.description %></td>
-            <td><%= journal.created_at %></td>
+            <td><%= "time" %></td>
             <td><%= journal.id %></td>
             <td>
-              <%= link_to "D",journals_path(journal), method: :delete %>
+              <%= link_to "Show", journal_path(journal), class: "btn btn-primary"%>
+
+              <%= link_to "Delete", journal_path(journal), class: "btn btn-danger", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
 
             </td>
           </tr>
