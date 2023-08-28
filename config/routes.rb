@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   
 
-  root 'home#index'
-  get 'journal/form'
-  
+
+  resources :home
+  resources :journals do
+    delete :remove_all, action: :destroy
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   #root 'demo#index'
 
