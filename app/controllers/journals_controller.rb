@@ -2,6 +2,7 @@ class JournalsController < ApplicationController
 
 	def new
 		@journal = Journal.new
+		@hournals = Journal.all
 	end
 
 
@@ -16,6 +17,10 @@ class JournalsController < ApplicationController
 		if @journal.destroy
 			redirect_to journals_path
 		end 
+	end
+
+	def remove_all
+		Journal.all.destroy
 	end
 
 	private

@@ -10,7 +10,7 @@
             <th scope="col">Title</th>
             <th scope="col">Description</th>
             <th scope="col">Updated at</th>
-            <th scope="col">Created at</th>
+            <th scope="col">ID</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -19,10 +19,11 @@
           <tr>
             <td><%= journal.title %></td>
             <td><%= journal.description %></td>
-            <td><%= journal.updated_at %></td>
             <td><%= journal.created_at %></td>
+            <td><%= journal.id %></td>
             <td>
-              <%= link_to "D",journal_path(journal), method: :delete %>
+              <%= link_to "D",journals_path(journal), method: :delete %>
+
             </td>
           </tr>
           <% end %>
