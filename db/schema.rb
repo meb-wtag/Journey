@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_24_081630) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachment_binaries", force: :cascade do |t|
+    t.bigint "attachment_id"
+    t.binary "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachment_id"], name: "index_attachment_binaries_on_attachment_id"
+  end
+
+  create_table "attachments", force: :cascade do |t|
+    t.string "owner_type"
+    t.bigint "owner_id"
+    t.string "token"
+    t.string "digest"
+    t.string "role"
+    t.string "type"
+    t.string "file_name"
+    t.string "file_type"
+    t.string "cache_type"
+    t.string "cache_max_age"
+    t.string "disposition"
+    t.bigint "file_size"
+    t.bigint "parent_id"
+    t.boolean "processed", default: false
+    t.text "custom"
+    t.boolean "serve", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_attachments_on_owner_type_and_owner_id"
+    t.index ["parent_id"], name: "index_attachments_on_parent_id"
+    t.index ["token"], name: "index_attachments_on_token"
+  end
 
   create_table "goals", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_081630) do
     t.integer "user_id"
     t.string "title", limit: 25
     t.text "content"
-    t.string "file_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

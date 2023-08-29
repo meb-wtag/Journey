@@ -6,7 +6,6 @@ class CreateJournalEntries < ActiveRecord::Migration[7.0]
       t.integer "user_id"
       t.string "title", :limit => 25
       t.text "content"
-      t.string :file_data
 
       t.timestamps
     end

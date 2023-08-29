@@ -80,3 +80,7 @@ group :development, :test do
 end
 
 gem "factory_bot", "~> 6.2"
+
+gem 'cancancan'
+
+gem 'attach', '~> 2.0'

@@ -1,6 +1,6 @@
 class JournalEntriesController < ApplicationController
 
-
+	
 	def new
     	@journal = Journal.find(params[:journal_id])
     	@journal_entry = @journal.journal_entries.new
@@ -40,7 +40,7 @@ class JournalEntriesController < ApplicationController
 	def journal_entry_params
 		params.require(:journal_entry).permit(:title, 
 											  :content,
-											  :file_path)
+											  :file)
 	end
 
 end

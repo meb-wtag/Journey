@@ -68,10 +68,14 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    attach (2.0.2)
+      activerecord (>= 6.0)
+      records_manipulator (>= 1.0, < 2.0)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -171,6 +175,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    records_manipulator (1.0.1)
     regexp_parser (2.8.1)
     reline (0.3.8)
       io-console (~> 0.5)
@@ -238,7 +243,9 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  attach (~> 2.0)
   bootsnap
+  cancancan
   capybara
   debug
   dotenv-rails
