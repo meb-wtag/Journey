@@ -19,17 +19,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_081630) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "journal_entries", id: false, force: :cascade do |t|
-    t.integer "entry_id", null: false
+  create_table "journal_entries", primary_key: "entry_id", id: :serial, force: :cascade do |t|
     t.integer "journal_id", null: false
     t.integer "user_id"
     t.string "title", limit: 25
     t.text "content"
-    t.string "file_path"
+    t.string "file_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["journal_id"], name: "index_journal_entries_on_journal_id"
-    t.index ["user_id"], name: "index_journal_entries_on_user_id"
   end
 
   create_table "journals", primary_key: "journal_id", id: :serial, force: :cascade do |t|
