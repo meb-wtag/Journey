@@ -1,5 +1,5 @@
 class CreateJournalEntries < ActiveRecord::Migration[7.0]
-  def change
+  def up
     create_table :journal_entries do |t|
       t.integer "journal_id", :null => false
       t.integer "user_id"
@@ -13,6 +13,6 @@ class CreateJournalEntries < ActiveRecord::Migration[7.0]
   end
 
   def down
-    drop_table :users
+    drop_table :journal_entries
   end
 end
