@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   #get 'demo/index'
   #get 'demo/hello'
   #get 'demo/other_hello'
-  #get ':controller(/:action(/:id))'
   # Defines the root path route ("/")
   # root "articles#index"
 end

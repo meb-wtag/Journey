@@ -1,17 +1,14 @@
-<% @journals = Journal.all %>
-
-
 <div class="container">
   <div class="row">
     <div class="col-12">
       <table class="table">
-        <thead>
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Updated at</th>
-            <th scope="col">ID</th>
-            <th scope="col">Actions</th>
+            <th><%= link_to "Title", sort: :title %> </th>
+            <th><%= link_to "Description", sort: :description %> </th>
+            <th><%= link_to "Updated at", sort: :updated_at %> </th>
+            <th><%= link_to "ID", sort: :id %> </th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -19,7 +16,7 @@
           <tr>
             <td><%= journal.title %></td>
             <td><%= journal.description %></td>
-            <td><%= "time" %></td>
+            <td><%= journal.created_at.to_formatted_s(:short) %></td>
             <td><%= journal.id %></td>
             <td>
               <%= link_to "Show", journal_path(journal), class: "btn btn-primary"%>
@@ -50,6 +47,3 @@
             {class:"btn btn-primary"})%> 
   </a>
 </div>
-
-
-

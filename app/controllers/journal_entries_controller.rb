@@ -1,10 +1,12 @@
 class JournalEntriesController < ApplicationController
 
+	def index
+		@journal_entries = JournalEntry.order(params[:sort])
+	end
 	
 	def new
     	@journal = Journal.find(params[:journal_id])
     	@journal_entry = @journal.journal_entries.new
-    	@journal_entries = JournalEntry.all
   	end
 
 

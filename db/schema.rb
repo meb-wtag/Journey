@@ -51,16 +51,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "journal_entries", primary_key: "entry_id", id: :serial, force: :cascade do |t|
+  create_table "journal_entries", force: :cascade do |t|
     t.integer "journal_id", null: false
     t.integer "user_id"
     t.string "title", limit: 25
     t.text "content"
+    t.text "goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "journals", primary_key: "journal_id", id: :serial, force: :cascade do |t|
+  create_table "journals", force: :cascade do |t|
     t.integer "user_id"
     t.string "title", limit: 25
     t.text "description"
