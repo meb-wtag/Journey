@@ -32,6 +32,7 @@ class JournalEntriesController < ApplicationController
 	end
 
 	private
+	
 	def journal_entry_params
 		params.require(:journal_entry).permit(:title, 
 			:content,
