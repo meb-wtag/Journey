@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
   create_table "journal_entries", force: :cascade do |t|
     t.integer "journal_id", null: false
     t.integer "user_id"
-    t.string "title", limit: 25
+    t.string "title"
     t.text "content"
     t.text "goal"
     t.datetime "created_at", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
 
   create_table "journals", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title", limit: 25
+    t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
 
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "title", limit: 25
+    t.string "title"
     t.text "content"
     t.date "deadline"
     t.integer "importance"
@@ -92,8 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "fist_name", limit: 25
-    t.string "last_name", limit: 25
+    t.string "fist_name"
+    t.string "last_name"
     t.string "role", default: "user"
     t.text "description"
     t.date "date_of_birth"

@@ -4,10 +4,10 @@
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th><%= link_to "Title", sort: :title %> </th>
-            <th><%= link_to "Description", sort: :description %> </th>
-            <th><%= link_to "Updated at", sort: :updated_at %> </th>
-            <th><%= link_to "ID", sort: :id %> </th>
+            <th><%= link_to 'Title', sort: :title %> </th>
+            <th><%= link_to 'Description', sort: :description %> </th>
+            <th><%= link_to 'Updated at', sort: :updated_at %> </th>
+            <th><%= link_to 'ID', sort: :id %> </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -19,7 +19,7 @@
             <td><%= journal.created_at.to_formatted_s(:short) %></td>
             <td><%= journal.id %></td>
             <td>
-              <%= link_to "Show", journal_path(journal), class: "btn btn-primary"%>
+              <%= link_to 'Show', journal_path(journal), class: "btn btn-primary"%>
 
               <%= link_to "Delete", journal_path(journal), class: "btn btn-danger", data: {
                     turbo_method: :delete,
@@ -39,7 +39,7 @@
 <div>
   <div>
     <% if @journals.empty? %>
-      <%= "You still dont have any Journals" %>
+      <%= 'You still dont have any Journals' %>
     <% end %>
   </div>
   <a>
