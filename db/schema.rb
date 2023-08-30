@@ -53,16 +53,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_131151) do
 
   create_table "journal_entries", force: :cascade do |t|
     t.integer "journal_id", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "title"
     t.text "content"
     t.text "goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["journal_id"], name: "index_journal_entries_on_journal_id"
+    t.index ["user_id"], name: "index_journal_entries_on_user_id"
   end
 
   create_table "journals", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false

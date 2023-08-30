@@ -27,5 +27,4 @@ class CreateAttachmentTables < ActiveRecord::Migration[6.0]
     drop_table :attachments
     drop_table :attachment_binaries
   end
-
 end

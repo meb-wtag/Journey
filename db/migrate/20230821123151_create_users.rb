@@ -1,14 +1,12 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
   def up
     create_table :users do |t|
-
       t.string "fist_name"
       t.string "last_name"
       t.string "role", :default => 'user'
       t.text "description"
       t.date "date_of_birth" 
       t.date "joining_date"
-
 
       t.timestamps
     end

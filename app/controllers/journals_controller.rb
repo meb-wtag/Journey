@@ -1,5 +1,5 @@
 class JournalsController < ApplicationController
-
+	
 	def index
 		@journals = Journal.order(params[:sort])
 	end
@@ -7,7 +7,6 @@ class JournalsController < ApplicationController
 	def new
 		@journal = Journal.new
 	end
-
 
 	def create
 		@journal = Journal.new(journal_params)
@@ -21,10 +20,6 @@ class JournalsController < ApplicationController
 		@journal.destroy
 
 		redirect_to journals_path
-	end
-
-	def remove_all
-		Journal.all.destroy
 	end
 
 	def show
